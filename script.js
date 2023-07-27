@@ -2,6 +2,7 @@ const playingObject = ["rock", "paper", "scissors"];
 let currentPlayerScore = 0;
 let currentComputerScore = 0;
 const buttons = document.querySelectorAll('button');
+const roundResult = document.querySelector('.roundResult');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -22,12 +23,12 @@ function getComputerChoice(){
 
 
 function updateScore(playerScore, computerScore){
-    let scoreBoard = document.querySelector('#result');
+    let scoreBoard = document.querySelector('.result');
     currentComputerScore = currentComputerScore + computerScore;
     currentPlayerScore = currentPlayerScore + playerScore;
     if(currentComputerScore < 5){
         if(currentPlayerScore < 5){
-            scoreBoard.textContent = currentPlayerScore + " - " + currentComputerScore;
+            scoreBoard.textContent = currentPlayerScore + "-" + currentComputerScore;
         }
         else{
             scoreBoard.textContent = "player won with 5 against " + currentComputerScore;
@@ -48,36 +49,36 @@ function oneRound(playerSelection, computerSelection){
     let playerScore = 0;
     let computerScore = 0;
     if(playerSelection === computerSelection){
-        console.log("Both selected " + playerSelection + ", it was a draw.");
+        roundResult.textContent = ("both selected " + playerSelection + ", it was a draw.");
         
     }
     else if(playerSelection === "rock"){
         if(computerSelection === "paper"){
-            console.log("Computer won with " + computerSelection + " against " + playerSelection);
+            roundResult.textContent = ("computer won with " + computerSelection + " against " + playerSelection);
             computerScore = 1;
         }
         else{
-            console.log("Player won with " + playerSelection+ " against " + computerSelection);
+            roundResult.textContent = ("player won with " + playerSelection+ " against " + computerSelection);
             playerScore = 1;
         }
      }
      else if(playerSelection === "paper"){
         if(computerSelection === "scissors"){
-            console.log("Computer won with " + computerSelection + " against " + playerSelection);
+            roundResult.textContent = ("computer won with " + computerSelection + " against " + playerSelection);
             computerScore = 1;
         }
         else{
-            console.log("Player won with " + playerSelection+ " against " + computerSelection);
+            roundResult.textContent = ("player won with " + playerSelection+ " against " + computerSelection);
             playerScore = 1;
         }
      }
      else if(playerSelection === "scissors"){
         if(computerSelection === "rock"){
-            console.log("Computer won with " + computerSelection + " against " + playerSelection);
+            roundResult.textContent = ("computer won with " + computerSelection + " against " + playerSelection);
             computerScore = 1;
         }
         else{
-            console.log("Player won with " + playerSelection+ " against " + computerSelection);
+            roundResult.textContent = ("player won with " + playerSelection+ " against " + computerSelection);
             playerScore = 1;
         }
      }
