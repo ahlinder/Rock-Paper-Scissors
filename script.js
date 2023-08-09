@@ -31,14 +31,14 @@ function updateScore(playerScore, computerScore){
             scoreBoard.textContent = currentPlayerScore + "-" + currentComputerScore;
         }
         else{
-            scoreBoard.textContent = "player won with 5 against " + currentComputerScore;
+            scoreBoard.textContent = "player won game with 5 against " + currentComputerScore;
             currentComputerScore = 0;
             currentPlayerScore = 0;
         }
     }
 
     else{
-        scoreBoard.textContent = "computer won with 5 against " + currentPlayerScore;
+        scoreBoard.textContent = "computer won game with 5 against " + currentPlayerScore;
         currentComputerScore = 0;
         currentPlayerScore = 0;
     }
